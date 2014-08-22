@@ -1,0 +1,122 @@
+---
+title: "Codebook"
+author: "cgibbs"
+date: "Friday, August 22, 2014"
+output: html_document
+---
+## Data set and study design
+
+The data used for the run_analysis.R script can be found here. https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. 
+
+Thirty subjects (ages 19-48 years) wore smartphones with accelrometer and gyroscopes to captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. While wearing the smartphone, each subject performed six activities:   Walking, Walking upstairs, Walkingdownstairs, Sitting, Standing, Laying. This data was separated into training data sets and test data sets. A detailed description of the study design can be found here. http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+##About run_analysis.R and  "tidydata.txt"
+
+The run_analysis.R script merges these data sets and performs a series of steps to produce a single tidy dataset for futher analysis.The resut of the run_analysis.R script is a single tidy data set named "tidydata.txt" with variable names formatted to be more easily read. the resulting data in this file are arranged by mean of standard deviation and mean values are aggregated by subject and activity. 
+
+##Variable descriptions for the "tidydata" file.
+
+Subject_id is a factor variable for thirty subjects were included in the analysis and their subject_id       
+  range from 1 to 30. 
+
+Activity is a factor variable for an activity performed by all subjects. The six activities include:
+  
+  Walking 
+  Walking_upstairs
+  Walking_downstairs
+  Sitting
+  Standing 
+  Laying
+
+Features variables are numeric variables of calculated means for mean and standard deviation of measurements by subject and activity contained in columns 3-88. 
+
+ [3] "timebodyaccelerometer_standard_deviation_x"                   
+ [4] "timebodyaccelerometer_standard_deviation_y"                   
+ [5] "timebodyaccelerometer_standard_deviation_z"                   
+ [6] "timegravityaccelerometer_standard_deviation_x"                
+ [7] "timegravityaccelerometer_standard_deviation_y"                
+ [8] "timegravityaccelerometer_standard_deviation_z"                
+ [9] "timebodyaccelerometerjerk_standard_deviation_x"               
+[10] "timebodyaccelerometerjerk_standard_deviation_y"               
+[11] "timebodyaccelerometerjerk_standard_deviation_z"               
+[12] "timebodygyroscope_standard_deviation_x"                       
+[13] "timebodygyroscope_standard_deviation_y"                       
+[14] "timebodygyroscope_standard_deviation_z"                       
+[15] "timebodygyroscopejerk_standard_deviation_x"                   
+[16] "timebodygyroscopejerk_standard_deviation_y"                   
+[17] "timebodygyroscopejerk_standard_deviation_z"                   
+[18] "timebodyaccelerometermag_standard_deviation"                  
+[19] "timegravityaccelerometermag_standard_deviation"               
+[20] "timebodyaccelerometerjerkmag_standard_deviation"              
+[21] "timebodygyroscopemag_standard_deviation"                      
+[22] "timebodygyroscopejerkmag_standard_deviation"                  
+[23] "frequencyuencybodyaccelerometer_standard_deviation_x"         
+[24] "frequencyuencybodyaccelerometer_standard_deviation_y"         
+[25] "frequencyuencybodyaccelerometer_standard_deviation_z"         
+[26] "frequencyuencybodyaccelerometerjerk_standard_deviation_x"     
+[27] "frequencyuencybodyaccelerometerjerk_standard_deviation_y"     
+[28] "frequencyuencybodyaccelerometerjerk_standard_deviation_z"     
+[29] "frequencyuencybodygyroscope_standard_deviation_x"             
+[30] "frequencyuencybodygyroscope_standard_deviation_y"             
+[31] "frequencyuencybodygyroscope_standard_deviation_z"             
+[32] "frequencyuencybodyaccelerometermag_standard_deviation"        
+[33] "frequencyuencybodybodyaccelerometerjerkmag_standard_deviation"
+[34] "frequencyuencybodybodygyroscopemag_standard_deviation"        
+[35] "frequencyuencybodybodygyroscopejerkmag_standard_deviation"    
+[36] "timebodyaccelerometer_mean_x"                                 
+[37] "timebodyaccelerometer_mean_y"                                 
+[38] "timebodyaccelerometer_mean_z"                                 
+[39] "timegravityaccelerometer_mean_x"                              
+[40] "timegravityaccelerometer_mean_y"                              
+[41] "timegravityaccelerometer_mean_z"                              
+[42] "timebodyaccelerometerjerk_mean_x"                             
+[43] "timebodyaccelerometerjerk_mean_y"                             
+[44] "timebodyaccelerometerjerk_mean_z"                             
+[45] "timebodygyroscope_mean_x"                                     
+[46] "timebodygyroscope_mean_y"                                     
+[47] "timebodygyroscope_mean_z"                                     
+[48] "timebodygyroscopejerk_mean_x"                                 
+[49] "timebodygyroscopejerk_mean_y"                                 
+[50] "timebodygyroscopejerk_mean_z"                                 
+[51] "timebodyaccelerometermag_mean"                                
+[52] "timegravityaccelerometermag_mean"                             
+[53] "timebodyaccelerometerjerkmag_mean"                            
+[54] "timebodygyroscopemag_mean"                                    
+[55] "timebodygyroscopejerkmag_mean"                                
+[56] "frequencyuencybodyaccelerometer_mean_x"                       
+[57] "frequencyuencybodyaccelerometer_mean_y"                       
+[58] "frequencyuencybodyaccelerometer_mean_z"                       
+[59] "frequencyuencybodyaccelerometer_meanfrequency__x"             
+[60] "frequencyuencybodyaccelerometer_meanfrequency__y"             
+[61] "frequencyuencybodyaccelerometer_meanfrequency__z"             
+[62] "frequencyuencybodyaccelerometerjerk_mean_x"                   
+[63] "frequencyuencybodyaccelerometerjerk_mean_y"                   
+[64] "frequencyuencybodyaccelerometerjerk_mean_z"                   
+[65] "frequencyuencybodyaccelerometerjerk_meanfrequency__x"         
+[66] "frequencyuencybodyaccelerometerjerk_meanfrequency__y"         
+[67] "frequencyuencybodyaccelerometerjerk_meanfrequency__z"         
+[68] "frequencyuencybodygyroscope_mean_x"                           
+[69] "frequencyuencybodygyroscope_mean_y"                           
+[70] "frequencyuencybodygyroscope_mean_z"                           
+[71] "frequencyuencybodygyroscope_meanfrequency__x"                 
+[72] "frequencyuencybodygyroscope_meanfrequency__y"                 
+[73] "frequencyuencybodygyroscope_meanfrequency__z"                 
+[74] "frequencyuencybodyaccelerometermag_mean"                      
+[75] "frequencyuencybodyaccelerometermag_meanfrequency_"            
+[76] "frequencyuencybodybodyaccelerometerjerkmag_mean"              
+[77] "frequencyuencybodybodyaccelerometerjerkmag_meanfrequency_"    
+[78] "frequencyuencybodybodygyroscopemag_mean"                      
+[79] "frequencyuencybodybodygyroscopemag_meanfrequency_"            
+[80] "frequencyuencybodybodygyroscopejerkmag_mean"                  
+[81] "frequencyuencybodybodygyroscopejerkmag_meanfrequency_"        
+[82] "angle_tbodyaccelerometermean_gravity"                         
+[83] "angle_tbodyaccelerometerjerkmean_gravitymean"                 
+[84] "angle_tbodygyroscopemean_gravitymean"                         
+[85] "angle_tbodygyroscopejerkmean_gravitymean"                     
+[86] "angle_x_gravitymean"                                          
+[87] "angle_y_gravitymean"                                          
+[88] "angle_z_gravitymean"
+
+
+ 
+

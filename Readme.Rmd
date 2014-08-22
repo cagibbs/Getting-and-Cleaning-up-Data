@@ -1,0 +1,33 @@
+---
+title: "Readme"
+author: "Catherine Gibbs"
+date: "Sunday, August 10, 2014"
+output: html_document
+---
+
+##About "run_analysis.R"
+
+The "run_analysis.R" script performs a series of steps to clean up some of the Samsung Galaxy accelerometer raw data that can be downloaded and unzipped from this website: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. The following steps are carried out by running the sciprt in R:
+
+1.Merges the training and the test sets to create one data set. This includes the files: subject_test, x_test, y_test and subject_train, x_train, t_train.
+
+2.Extracts only the measurements that are a mean and standard deviation into a new data frame. 
+
+3.Uses descriptive activity names for the "Activity"" variable in the data set. For example, "1"" recoded to "walking"
+
+4.Appropriately labels the data set with descriptive activity names. Here underscores were used to improve readability of unavoidably long variable names.
+
+5.Using the data.table package, an independent tidy data set with the average of each variable for each activity and each subject is created. This final data set is then written to a file called "tidydata.txt".
+
+##Requirements
+
+Most of the code is carried out with base R functions. 
+
+R software. R Core Team (2014). R: A language and environment for statistical computing. R Foundation for StatisticalComputing, Vienna, Austria. URL http://www.R-project.org/.
+
+In addition, the data.table package will need to be installed in R:
+
+library(data.table)
+
+##Codebook
+Please refer to Codebook.md which describes how the data was obtained and used in "run_analysis.R"" script as well as the resulting "tidydata.txt" data file.
